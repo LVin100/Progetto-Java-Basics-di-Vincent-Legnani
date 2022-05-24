@@ -9,7 +9,6 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-
 public class Utenti {
 
     private int id;
@@ -114,31 +113,34 @@ public class Utenti {
 
         return map;
     }
-    public String preparaStringaDaCaricare(){
-        return(Integer.toString(this.id)+";"+this.nome+";"+this.cognome+";"+this.dataDiNascita+";"+this.indirizzo+";"+this.documento);
+
+    public String preparaStringaDaCaricare() {
+        return (Integer.toString(this.id) + ";" + this.nome + ";" + this.cognome + ";" + this.dataDiNascita + ";"
+                + this.indirizzo + ";" + this.documento);
     }
-    public static void scriviCSVUtenti(Map<Integer, Utenti> map){
-        String nomeFile="C:\\Users\\LGNVCN01B\\.vscode\\esercizi\\Java SE\\Progetto JAVA di Vincent Legnani\\project\\src\\csv\\utenti\\utenti.csv";
-        try  {
+
+    public static void scriviCSVUtenti(Map<Integer, Utenti> map) {
+        String nomeFile = "C:\\Users\\LGNVCN01B\\.vscode\\esercizi\\Java SE\\Progetto JAVA di Vincent Legnani\\project\\src\\csv\\utenti\\utenti.csv";
+        try {
             FileWriter fileWriter = new FileWriter(nomeFile);
             fileWriter.append("ID;Nome;Cognome;Data di nascita;Indirizzo;Documento ID\n");
             Set<Integer> setOfMap = map.keySet();
             Object[] controller = setOfMap.toArray();
-            for(int i = 0; i<controller.length; i++){
-                if(i == controller.length-1){
-                fileWriter.append(map.get(controller[i]).preparaStringaDaCaricare());
-                System.out.println(map.get(controller[i]).preparaStringaDaCaricare());
-                }else if (i != controller.length-1){
-                    fileWriter.append(map.get(controller[i]).preparaStringaDaCaricare()+"\n");
+            for (int i = 0; i < controller.length; i++) {
+                if (i == controller.length - 1) {
+                    fileWriter.append(map.get(controller[i]).preparaStringaDaCaricare());
+                    System.out.println(map.get(controller[i]).preparaStringaDaCaricare());
+                } else if (i != controller.length - 1) {
+                    fileWriter.append(map.get(controller[i]).preparaStringaDaCaricare() + "\n");
                 }
-               
+
             }
             System.out.println("Scrittura di Utenti avvenuta con successo!");
             fileWriter.close();
-               }catch(FileNotFoundException e){
-            System.out.println("Errore nell'apertura del file"+ nomeFile);
-        }catch(IOException e) {
-            System.out.println( "Errore nella scrittura nel file"+ nomeFile) ;
-        } 
+        } catch (FileNotFoundException e) {
+            System.out.println("Errore nell'apertura del file" + nomeFile);
+        } catch (IOException e) {
+            System.out.println("Errore nella scrittura nel file" + nomeFile);
+        }
     }
 }
