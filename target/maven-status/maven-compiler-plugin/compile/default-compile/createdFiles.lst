@@ -1,0 +1,10 @@
+org\javabasics\menu\Menu.class
+org\javabasics\menu\RestituireUnProdotto.class
+org\javabasics\csv\utenti\Utenti.class
+org\javabasics\menu\CompraProdotto.class
+org\javabasics\csv\prodotti\Prodotti.class
+org\javabasics\menu\MostraTuttiProdotti.class
+org\javabasics\menu\EsportaProdottiDisponibili.class
+org\javabasics\menu\RegistraUnNuovoUtente.class
+org\javabasics\Main.class
+org\javabasics\csv\vendite\Vendite.class

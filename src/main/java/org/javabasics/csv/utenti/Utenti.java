@@ -85,7 +85,7 @@ public class Utenti {
     }
 
     public static Map<Integer, Utenti> caricaUtenti() {
-        String nomeFile = "C:\\Users\\LGNVCN01B\\OneDrive - DEDAGROUP SPA\\Desktop\\Nuova cartella\\src\\main\\java\\org\\javabasics\\csv\\utenti\\utenti.csv";
+        String nomeFile = "src\\main\\java\\org\\javabasics\\csv\\utenti\\utenti.csv";
         Map<Integer, Utenti> map = new HashMap<>();
         try {
             Scanner inputStream = new Scanner(new File(nomeFile));

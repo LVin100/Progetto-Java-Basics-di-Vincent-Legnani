@@ -72,7 +72,7 @@ public class Prodotti {
     }
 
     public static Map<Integer, Prodotti> caricaProdotti() {
-        String nomeFile = "C:\\Users\\LGNVCN01B\\OneDrive - DEDAGROUP SPA\\Desktop\\Nuova cartella\\src\\main\\java\\org\\javabasics\\csv\\prodotti\\prodotti.csv";
+        String nomeFile = "src\\main\\java\\org\\javabasics\\csv\\prodotti\\prodotti.csv";
         Map<Integer, Prodotti> map = new HashMap<>();
         try {
             Scanner inputStream = new Scanner(new File(nomeFile));
