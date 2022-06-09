@@ -28,7 +28,7 @@ Se tutto va bene (come dovrebbe essere 😉) non riceverai errori e verrà creat
   0 ti farà chiudere l'applicazione;
   1 ti farà visualizzare tutti i prodotti all'interno del sistema, sia quelli disponibili che quelli non;
   2 ti farà comprare un prodotto tra quelli disponibili,
-  3 ti farà effettuare il reso di un prodotto acquistato (puoi trovare l'elenco degli acquisti effettuati aprendo il file Vendite in src/main/java/org/javabasics/csv/vendite/vendite.csv.
+  3 ti farà effettuare il reso di un prodotto acquistato (puoi trovare l'elenco degli acquisti effettuati aprendo il file Vendite in src/main/resources/vendite.csv.
   4 ti farà aggiungere un nuovo utente;
   5 ti esporterà un file .csv con riportati gli elementi disponibili (e quindi acquistabili)
   
