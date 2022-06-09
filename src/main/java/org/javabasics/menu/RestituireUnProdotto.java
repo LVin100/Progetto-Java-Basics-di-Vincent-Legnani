@@ -2,9 +2,9 @@ package org.javabasics.menu;
 
 import java.util.Map;
 
-import org.javabasics.csv.prodotti.Prodotti;
-import org.javabasics.csv.utenti.Utenti;
-import org.javabasics.csv.vendite.Vendite;
+import org.javabasics.Models.Prodotti;
+import org.javabasics.Models.Utenti;
+import org.javabasics.Models.Vendite;
 
 public class RestituireUnProdotto {
     public static void restituisciProdotto(int idVendita, Map<Integer, Prodotti> prodotti, Map<Integer, Utenti> utenti,
@@ -13,7 +13,7 @@ public class RestituireUnProdotto {
             int idProdotto = vendite.get(idVendita).getIdProdotto();
             prodotti.get(idProdotto).setDisponibile("SI");
             Prodotti.scriviCSVProdotti(prodotti,
-                    "C:\\Users\\LGNVCN01B\\.vscode\\esercizi\\Java SE\\Progetto JAVA di Vincent Legnani\\project\\src\\csv\\prodotti\\prodotti.csv");
+                    "prodotti.csv");
 
             vendite.remove(idVendita);
             vendite.values().remove(null);

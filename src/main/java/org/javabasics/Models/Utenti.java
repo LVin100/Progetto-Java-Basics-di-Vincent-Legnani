@@ -1,4 +1,4 @@
-package org.javabasics.csv.utenti;
+package org.javabasics.Models;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -84,35 +84,35 @@ public class Utenti {
         return documento;
     }
 
-    public static Map<Integer, Utenti> caricaUtenti() {
-        String nomeFile = "src\\main\\java\\org\\javabasics\\csv\\utenti\\utenti.csv";
-        Map<Integer, Utenti> map = new HashMap<>();
-        try {
-            Scanner inputStream = new Scanner(new File(nomeFile));
-            String riga = inputStream.nextLine();
+    // public static Map<Integer, Utenti> caricaUtenti() {
+    //     String nomeFile = "org/javabasics/csv/utenti/utenti.csv";
+    //     Map<Integer, Utenti> map = new HashMap<>();
+    //     try {
+    //         Scanner inputStream = new Scanner(new File(nomeFile));
+    //         String riga = inputStream.nextLine();
 
-            while (inputStream.hasNextLine()) {
-                Utenti utente = new Utenti();
-                riga = inputStream.nextLine();
-                String[] array = riga.split(";");
-                utente.setId(Integer.parseInt(array[0]));
-                utente.setNome(array[1]);
-                utente.setDataDiNascita(array[2]);
-                utente.setIndirizzo(array[3]);
-                utente.setDocumento(array[4]);
+    //         while (inputStream.hasNextLine()) {
+    //             Utenti utente = new Utenti();
+    //             riga = inputStream.nextLine();
+    //             String[] array = riga.split(";");
+    //             utente.setId(Integer.parseInt(array[0]));
+    //             utente.setNome(array[1]);
+    //             utente.setDataDiNascita(array[2]);
+    //             utente.setIndirizzo(array[3]);
+    //             utente.setDocumento(array[4]);
 
-                map.put(utente.getId(), utente);
+    //             map.put(utente.getId(), utente);
 
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("Impossibile trovare il file " + nomeFile);
-        } catch (IOException e) {
-            System.out.println("Errore nella lettura del file " + nomeFile);
-        }
-        System.out.println("utenti.csv è stato caricato correttamente!");
+    //         }
+    //     } catch (FileNotFoundException e) {
+    //         System.out.println("Impossibile trovare il file " + nomeFile);
+    //     } catch (IOException e) {
+    //         System.out.println("Errore nella lettura del file " + nomeFile);
+    //     }
+    //     System.out.println("utenti.csv è stato caricato correttamente!");
 
-        return map;
-    }
+    //     return map;
+    // }
 
     public String preparaStringaDaCaricare() {
         return (Integer.toString(this.id) + ";" + this.nome + ";" + this.cognome + ";" + this.dataDiNascita + ";"
@@ -120,7 +120,7 @@ public class Utenti {
     }
 
     public static void scriviCSVUtenti(Map<Integer, Utenti> map) {
-        String nomeFile = "C:\\Users\\LGNVCN01B\\.vscode\\esercizi\\Java SE\\Progetto JAVA di Vincent Legnani\\project\\src\\csv\\utenti\\utenti.csv";
+        String nomeFile = "org/javabasics/csv/utenti/utenti.csv";
         try {
             FileWriter fileWriter = new FileWriter(nomeFile);
             fileWriter.append("ID;Nome;Cognome;Data di nascita;Indirizzo;Documento ID\n");

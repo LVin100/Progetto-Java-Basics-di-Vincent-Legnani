@@ -1,4 +1,4 @@
-package org.javabasics.csv.vendite;
+package org.javabasics.Models;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -52,36 +52,36 @@ public class Vendite {
         + Integer.toString(this.idUtente));
   }
 
-  public static Map<Integer, Vendite> caricaVendite() {
-    String nomeFile = "src\\main\\java\\org\\javabasics\\csv\\vendite\\vendite.csv";
-    Map<Integer, Vendite> map = new HashMap<>();
-    try {
-      Scanner inputStream = new Scanner(new File(nomeFile));
-      String riga = inputStream.nextLine();
+  // public static Map<Integer, Vendite> caricaVendite() {
+  //   String nomeFile = "org/javabasics/csv/vendite/vendite.csv";
+  //   Map<Integer, Vendite> map = new HashMap<>();
+  //   try {
+  //     Scanner inputStream = new Scanner(new File(nomeFile));
+  //     String riga = inputStream.nextLine();
 
-      while (inputStream.hasNextLine()) {
-        Vendite vendita = new Vendite();
-        riga = inputStream.nextLine();
-        String[] array = riga.split(";");
-        vendita.setId(Integer.parseInt(array[0]));
-        vendita.setIdProdotto(Integer.parseInt(array[1]));
-        vendita.setIdUtente(Integer.parseInt(array[2]));
+  //     while (inputStream.hasNextLine()) {
+  //       Vendite vendita = new Vendite();
+  //       riga = inputStream.nextLine();
+  //       String[] array = riga.split(";");
+  //       vendita.setId(Integer.parseInt(array[0]));
+  //       vendita.setIdProdotto(Integer.parseInt(array[1]));
+  //       vendita.setIdUtente(Integer.parseInt(array[2]));
 
-        map.put(vendita.getId(), vendita);
+  //       map.put(vendita.getId(), vendita);
 
-      }
-    } catch (FileNotFoundException e) {
-      System.out.println("Impossibile trovare il file " + nomeFile);
-    } catch (IOException e) {
-      System.out.println("Errore nella lettura del file " + nomeFile);
-    }
-    System.out.println("vendite.csv è stato caricato correttamente!");
+  //     }
+  //   } catch (FileNotFoundException e) {
+  //     System.out.println("Impossibile trovare il file " + nomeFile);
+  //   } catch (IOException e) {
+  //     System.out.println("Errore nella lettura del file " + nomeFile);
+  //   }
+  //   System.out.println("vendite.csv è stato caricato correttamente!");
 
-    return map;
-  }
+  //   return map;
+  // }
 
   public static void scriviCSVVendite(Map<Integer, Vendite> map) {
-    String nomeFile = "C:\\Users\\LGNVCN01B\\.vscode\\esercizi\\Java SE\\Progetto JAVA di Vincent Legnani\\project\\src\\csv\\vendite\\vendite.csv";
+    String nomeFile = "org/javabasics/csv/vendite/vendite.csv";
     try {
       FileWriter outputStream = new FileWriter(nomeFile);
       outputStream.append("ID;ID prodotto;ID utente\n");

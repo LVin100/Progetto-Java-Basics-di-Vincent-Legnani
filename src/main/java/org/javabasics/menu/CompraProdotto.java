@@ -2,9 +2,9 @@ package org.javabasics.menu;
 
 import java.util.Map;
 
-import org.javabasics.csv.prodotti.Prodotti;
-import org.javabasics.csv.utenti.Utenti;
-import org.javabasics.csv.vendite.Vendite;
+import org.javabasics.Models.Prodotti;
+import org.javabasics.Models.Utenti;
+import org.javabasics.Models.Vendite;
 
 public class CompraProdotto {
     public static void compraProdotto(int idProdotto, int idUtente, Map<Integer, Prodotti> prodotti,
@@ -26,7 +26,7 @@ public class CompraProdotto {
             System.out.println(
                     "inserita la nuova vendita nell'array, adesso il programma avvia la scrittura dei file CSV");
             Prodotti.scriviCSVProdotti(prodotti,
-                    "C:\\Users\\LGNVCN01B\\.vscode\\esercizi\\Java SE\\Progetto JAVA di Vincent Legnani\\project\\src\\csv\\prodotti\\prodotti.csv");
+                    "prodotti.csv");
             Vendite.scriviCSVVendite(vendite);
 
         } else {

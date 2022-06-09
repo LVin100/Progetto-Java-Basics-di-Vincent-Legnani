@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import org.javabasics.csv.prodotti.Prodotti;
+import org.javabasics.Models.Prodotti;
 
 public class EsportaProdottiDisponibili {
 

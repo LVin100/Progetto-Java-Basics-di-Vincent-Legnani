@@ -3,7 +3,7 @@ package org.javabasics.menu;
 import java.util.Map;
 import java.util.Scanner;
 
-import org.javabasics.csv.utenti.Utenti;
+import org.javabasics.Models.Utenti;
 
 public class RegistraUnNuovoUtente {
     public static void registraNuovoUtente(Map<Integer, Utenti> utenti) {

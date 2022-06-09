@@ -1,4 +1,4 @@
-package org.javabasics.csv.prodotti;
+package org.javabasics.Models;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,6 +16,18 @@ public class Prodotti {
     private String prezzo;
     private String marca;
     private String disponibile;
+
+    public Prodotti(){}
+
+    public Prodotti(int id, String nome, String prezzo, String dataDiInserimento, String marca, String disponibile) {
+        this.id = id;
+        this.nome = nome;
+        this.prezzo = prezzo;
+        this.dataDiInserimento = dataDiInserimento;
+        this.marca = marca;
+        this.disponibile = disponibile;
+    }
+
 
     public void setId(int id) {
         this.id = id;
@@ -71,37 +83,37 @@ public class Prodotti {
 
     }
 
-    public static Map<Integer, Prodotti> caricaProdotti() {
-        String nomeFile = "src\\main\\java\\org\\javabasics\\csv\\prodotti\\prodotti.csv";
-        Map<Integer, Prodotti> map = new HashMap<>();
-        try {
-            Scanner inputStream = new Scanner(new File(nomeFile));
-            String riga = inputStream.nextLine();
+    // public static Map<Integer, Prodotti> caricaProdotti() {
+    //     String nomeFile = "src/resource/prodotti.csv";
+    //     Map<Integer, Prodotti> map = new HashMap<>();
+    //     try {
+    //         Scanner inputStream = new Scanner(new File(nomeFile));
+    //         String riga = inputStream.nextLine();
 
-            while (inputStream.hasNextLine()) {
-                Prodotti prodotto = new Prodotti();
-                riga = inputStream.nextLine();
-                String[] array = riga.split(";");
-                prodotto.setId(Integer.parseInt(array[0]));
-                prodotto.setNome(array[1]);
-                prodotto.setDataDiInserimento(array[2]);
-                String[] str = array[3].split(" ");
-                prodotto.setPrezzo(str[0]);
-                prodotto.setMarca(array[4]);
-                prodotto.setDisponibile(array[5]);
+    //         while (inputStream.hasNextLine()) {
+    //             Prodotti prodotto = new Prodotti();
+    //             riga = inputStream.nextLine();
+    //             String[] array = riga.split(";");
+    //             prodotto.setId(Integer.parseInt(array[0]));
+    //             prodotto.setNome(array[1]);
+    //             prodotto.setDataDiInserimento(array[2]);
+    //             String[] str = array[3].split(" ");
+    //             prodotto.setPrezzo(str[0]);
+    //             prodotto.setMarca(array[4]);
+    //             prodotto.setDisponibile(array[5]);
 
-                map.put(prodotto.getId(), prodotto);
+    //             map.put(prodotto.getId(), prodotto);
 
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("Impossibile trovare il file " + nomeFile);
-        } catch (IOException e) {
-            System.out.println("Errore nella lettura del file " + nomeFile);
-        }
-        System.out.println("prodotti.csv è stato caricato correttamente!");
+    //         }
+    //     } catch (FileNotFoundException e) {
+    //         System.out.println("Impossibile trovare il file " + nomeFile);
+    //     } catch (IOException e) {
+    //         System.out.println("Errore nella lettura del file " + nomeFile);
+    //     }
+    //     System.out.println("prodotti.csv è stato caricato correttamente!");
 
-        return map;
-    }
+    //     return map;
+    // }
 
     public String preparaStringaDaCaricare() {
         return (Integer.toString(this.id) + ";" + this.nome + ";" + this.dataDiInserimento + ";" + this.prezzo + ";"
@@ -109,8 +121,6 @@ public class Prodotti {
     }
 
     public static void scriviCSVProdotti(Map<Integer, Prodotti> map, String nomeFile) {
-        // "C:\\Users\\LGNVCN01B\\.vscode\\esercizi\\Java SE\\Progetto JAVA di Vincent
-        // Legnani\\project\\src\\csv\\prodotti\\prodotti.csv";
         try {
             FileWriter outputStream = new FileWriter(nomeFile);
             outputStream.append("ID;Nome;Data di inserimento;Prezzo;Marca;Disponibile\n");
@@ -131,5 +141,4 @@ public class Prodotti {
             System.out.println("errore nella scrittura nel file" + nomeFile);
         }
     }
-
 }

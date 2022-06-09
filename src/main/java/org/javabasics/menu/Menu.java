@@ -3,9 +3,9 @@ package org.javabasics.menu;
 import java.util.Map;
 import java.util.Scanner;
 
-import org.javabasics.csv.prodotti.Prodotti;
-import org.javabasics.csv.utenti.Utenti;
-import org.javabasics.csv.vendite.Vendite;
+import org.javabasics.Models.Prodotti;
+import org.javabasics.Models.Utenti;
+import org.javabasics.Models.Vendite;
 
 public class Menu {
 

@@ -2,7 +2,7 @@ package org.javabasics.menu;
 
 import java.util.Map;
 
-import org.javabasics.csv.prodotti.Prodotti;
+import org.javabasics.Models.Prodotti;
 
 public class MostraTuttiProdotti {
     public static void mostraTuttiProdotti(Map<Integer, Prodotti> map) {
